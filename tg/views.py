@@ -51,7 +51,6 @@ def message_handler(update, context):
     menu_state = user_state.get("menu_state", 0)
     state = user_state.get("state", 0)
 
-    print("state", menu_state, state, text)
     if menu_state == 1:
         if state == 100:
             user_state.update({'state': 101})
@@ -94,7 +93,7 @@ def message_handler(update, context):
             if date:
                 user_state.update({"state": 104, "date": text})
                 user_log.change_log(user_state)
-                message = f"<b>Malumotlaringiz to'g'rimi?</b>\n\n<b>Kanal:</b> {user_state.get('channel', '')}\n<b>Vaqt:</b> {date}"
+                message = f"<b>Malumotlaringiz to'g'rimi? 👇</b>\n\n<b>Kanal:</b> {user_state.get('channel', '')}\n<b>Vaqt:</b> {date}"
                 button = [
                     ["✅ Ha", "❌ Yoq"]
                 ]
@@ -109,7 +108,6 @@ def message_handler(update, context):
             if text == "✅ Ha":
                 date = date_check(user_state.get("date", ''))
                 channel = user_state.get("channel", "")
-                print("channel", channel)
 
                 posts = Post.objects.filter(user__tg_id=user_data.id, is_active=False, send_post=False).order_by("id")
                 if posts:
