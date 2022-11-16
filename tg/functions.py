@@ -36,3 +36,7 @@ def send_post_to_channel():
                     BOT.send_message(chat_id=post.channel, text=caption, parse_mode='HTML')
                 except Exception as e:
                     print("error send message post e=", e)
+
+            post.send_post = True
+            post.is_active = False
+            post.save()
