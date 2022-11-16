@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    "django_apscheduler",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,4 +135,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR.parent, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TOKEN_KEY = "5679545210:AAFNY_fR3X_0GDp1kQIk1ZRj0F0woQNlmPA"
+TOKEN_KEY = "5691579006:AAGEiz-3uqE3OkdmVZNqb5VARYEW4QHb5gI"
